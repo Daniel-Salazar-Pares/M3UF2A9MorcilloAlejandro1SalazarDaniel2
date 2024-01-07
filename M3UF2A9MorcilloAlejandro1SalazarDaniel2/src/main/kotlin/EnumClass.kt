@@ -1,11 +1,9 @@
 enum class Targetes (val codi: Int, val targeta: String, val preu:Float) {
     Senzill(1, "Billet Senzill", 2.40f),
     Casual(2, "T-Casual", 11.35f),
-    Usual(3, "T-Usual", 20f),
+    Usual(3, "T-Usual", 40f),
     Familiar(4, "T-Familiar", 10f),
-    Jove(5, "T-Jove", 40f),
-    Grup(6, "T-Grup", 79.45f);
-
+    Jove(5, "T-Jove", 80f);
     companion object {
 
         fun preuAmbCodi(codi: Int): Float {
@@ -18,6 +16,18 @@ enum class Targetes (val codi: Int, val targeta: String, val preu:Float) {
 
     }
 }
+
+enum class Zona(val numZona: Int, val factor: Float) {
+    ZONA_1(1, 1.0f),
+    ZONA_2(2, 1.3125f),
+    ZONA_3(3, 1.8443f)
+}
+
+data class Compra(
+    var nom : String,
+    var zona : Int,
+    var preu: Float
+)
 
 enum class ColorANSI(val codi: String) {
     RESET("\u001B[0m"),
