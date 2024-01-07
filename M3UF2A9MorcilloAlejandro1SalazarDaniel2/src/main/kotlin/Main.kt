@@ -1,5 +1,3 @@
-import java.util.*
-
 fun main() {
     while (true) {
         var targetes = mutableListOf<Compra>()
